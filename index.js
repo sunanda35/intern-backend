@@ -2,18 +2,19 @@ const express = require('express')
 const multer = require('multer')
 const path = require('path')
 const crypto = require('crypto')
+var cors = require('cors')
 const GridFsStorage = require('multer-gridfs-storage')
 require('./db/connect')
 const upload = require('./model/upload')
 const mongoose = require('mongoose')
 const { Grid } = require('gridfs-stream')
 const app = express()
-
+app.use(cors())
 
 app.use(express.json()) 
 app.use(express.urlencoded({ extended: true }))
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 6000
 app.get('/', (req, res) => {
     res.send('Nothing is here bitch!')
 })
