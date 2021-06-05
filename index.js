@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }))
 
 const port = process.env.PORT || 6000
 app.get('/', (req, res) => {
-    res.send('Nothing is here bitch!')
+    res.send('Nothing is here. I just created api in this backend. You can use api end point with postman.')
 })
 app.get('/getall', async(req, res) => {
     await upload.find({}, (err, result) => {
