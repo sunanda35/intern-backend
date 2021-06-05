@@ -14,7 +14,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 const port = process.env.PORT || 3000
-
+app.get('/', (req, res) => {
+    res.send('Nothing is here bitch!')
+})
 app.get('/getall', async(req, res) => {
     await upload.find({}, (err, result) => {
         if (err) {
