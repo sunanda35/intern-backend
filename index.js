@@ -75,39 +75,4 @@ app.post('/uploaddata', async(req, res) => {
 //upload all movie details to mongodb
 
 
-// const conn = mongoose.createConnection(process.env.MONGODB_URL)
-// let gfs;
-// conn.on('open', () => {
-//     gfs = Grid(conn.db, mongoose.mongo)
-//     gfs.collection('thumbnail')
-// })
-// const storage = new GridFsStorage({
-//     url: process.env.MONGODB_URL,
-//     file: (req, file) => {
-//         return new Promise((resolve, reject) => {
-//             crypto.randomBytes(16, (err, buf) => {
-//                 if (err) {
-//                     return reject(err)
-//                 }
-//                 const filename = buf.toString('hex') + path.extname(file.originalname)
-//                 const fileinfo = {
-//                     filename: filename,
-//                     bucketname: 'uploads'
-//                 }
-//                 resolve(fileinfo)
-//             })
-//         })
-//     }
-// })
-
-// const uploadThubnail = multer({ storage });
-// app.post('/uploadthumb', uploadThubnail.single('thumbnail'), (req, res) => {
-//     res.json({thumbnail: req.thumbnail})
-// })
-// //upload video thumbnail to mongodb using multer
-// app.post('/uploadvideo', (req, res) => {
-//     res.send('upload video api')
-// })
-// // app.use(errorController)
-
 app.listen(port, ()=>console.log(`server started at: http://localhost:${port}`))
